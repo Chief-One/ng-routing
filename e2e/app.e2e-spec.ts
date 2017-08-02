@@ -1,10 +1,10 @@
-import { AppioPage } from './app.po';
+import { appPage } from './app.po';
 
-describe('appio App', () => {
-  let page: AppioPage;
+describe('app App', () => {
+  let page: appPage;
 
   beforeEach(() => {
-    page = new AppioPage();
+    page = new appPage();
   });
 
   it('should display message saying app works', () => {
