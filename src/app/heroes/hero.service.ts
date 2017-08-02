@@ -1,27 +1,27 @@
 import { Injectable } from '@angular/core';
-import { Observable } from "rxjs/Observable";
 
+export class Hero {
+  constructor(public id: number, public name: string) { }
+}
 
+let HEROES = [
+  new Hero(11, 'Mr. Nice'),
+  new Hero(12, 'Narco'),
+  new Hero(13, 'Bombasto'),
+  new Hero(14, 'Celeritas'),
+  new Hero(15, 'Magneta'),
+  new Hero(16, 'RubberMan')
+];
+
+let heroesPromise = Promise.resolve(HEROES);
 
 @Injectable()
 export class HeroService {
-  public heroes = [
-    new Hero(11, 'Mr. Nice'),
-    new Hero(12, 'Narco'),
-    new Hero(13, 'Bombasto'),
-    new Hero(14, 'Celeritas'),
-    new Hero(15, 'Magneta'),
-    new Hero(16, 'RubberMan')
-  ];
+  getHeroes() { return heroesPromise; }
 
-  constructor() { }
-
-  getHero(id: string): Hero {
-    return this.heroes.filter(x => x.id == id)[0];
-  }
-}
-
-export class Hero {
-  constructor(public id, public name) {
+  getHero(id: number | string) {
+    return heroesPromise
+      // (+) before `id` turns the string into a number
+      .then(heroes => heroes.find(hero => hero.id === +id));
   }
 }
