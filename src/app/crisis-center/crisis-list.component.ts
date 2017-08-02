@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-crisis-list',
-  templateUrl: './crisis-list.component.html',
-  styleUrls: ['./crisis-list.component.css']
+  template: '<p>crisis-list works!</p>'
 })
 export class CrisisListComponent implements OnInit {
 

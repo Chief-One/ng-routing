@@ -4,24 +4,24 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Route, Routes } from '@angular/router'
 
-import { AppRoutingModule } from './modules/app-routing/app-routing.module';
+import { HeroesModule }     from './heroes/heroes.module';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { CrisisListComponent } from './components/crisis-list/crisis-list.component';
-import { HeroListComponent } from './components/hero-list/hero-list.component';
-import { SidekicksComponent } from './components/sidekicks/sidekicks.component';
+import { CrisisListComponent } from './crisis-list.component';
+import { PageNotFoundComponent } from './page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CrisisListComponent,
-    HeroListComponent,
-    SidekicksComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    HeroesModule,
     AppRoutingModule
   ],
   providers: [],

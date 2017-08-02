@@ -1,15 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CrisisListComponent } from '../../components/crisis-list/crisis-list.component';
-import { HeroListComponent } from '../../components/hero-list/hero-list.component';
-import { SidekicksComponent } from '../../components/sidekicks/sidekicks.component';
+import { CrisisListComponent } from './crisis-center/crisis-list.component';
+import { PageNotFoundComponent } from './page-not-found.component';
 
 const appRoutes: Routes = [
   { path: 'crisis-center', component: CrisisListComponent },
-  { path: 'heroes', component: HeroListComponent },
   { path: '', redirectTo: '/heroes', pathMatch: 'full' },
-  { path: '**', component: SidekicksComponent }
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
