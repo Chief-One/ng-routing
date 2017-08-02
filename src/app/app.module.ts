@@ -1,8 +1,9 @@
 import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
+import { CommonModule } from '@angular/common';  
+
 import { AppComponent }            from './app.component';
-import { PageNotFoundComponent }   from './not-found.component';
 
 import { AppRoutingModule }        from './app-routing.module';
 import { HeroesModule }            from './heroes/heroes.module';
@@ -12,13 +13,13 @@ import { CrisisCenterModule }      from './crisis-center/crisis-center.module';
   imports: [
     BrowserModule,
     FormsModule,
+    CommonModule,
     HeroesModule,
     CrisisCenterModule,
     AppRoutingModule
   ],
   declarations: [
-    AppComponent,
-    PageNotFoundComponent
+    AppComponent
   ],
   providers: [],
   bootstrap: [ AppComponent ]
