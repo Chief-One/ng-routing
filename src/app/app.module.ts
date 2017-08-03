@@ -1,27 +1,43 @@
-import { NgModule }       from '@angular/core';
-import { BrowserModule }  from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms';
-import { CommonModule } from '@angular/common';  
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
-import { AppComponent }            from './app.component';
+import { Router } from '@angular/router';
 
-import { AppRoutingModule }        from './app-routing.module';
-import { HeroesModule }            from './heroes/heroes.module';
-import { CrisisCenterModule }      from './crisis-center/crisis-center.module';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+
+import { HeroesModule } from './heroes/heroes.module';
+import { ComposeMessageComponent } from './compose-message.component';
+import { LoginRoutingModule } from './login-routing.module';
+import { LoginComponent } from './login.component';
+import { PageNotFoundComponent } from './not-found.component';
+import { AdminModule } from "app/admin/admin.module";
+import { CrisisCenterModule } from "app/crisis-center/crisis-center.module";
+import { DialogService } from "app/dialog.service";
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    CommonModule,
     HeroesModule,
     CrisisCenterModule,
+    AdminModule,
+    LoginRoutingModule,
     AppRoutingModule
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    ComposeMessageComponent,
+    LoginComponent,
+    PageNotFoundComponent
   ],
-  providers: [],
-  bootstrap: [ AppComponent ]
+  providers: [DialogService],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  // Diagnostic only: inspect router configuration
+  constructor(router: Router) {
+    console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+  }
+}

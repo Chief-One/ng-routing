@@ -6,6 +6,7 @@ import { FormsModule }    from '@angular/forms';
 
 import { PageNotFoundComponent } from './not-found.component';
 import { ComposeMessageComponent } from './compose-message.component';
+import { CanDeactivateGuard } from "app/can-deactivate.guard.service";
 
 const appRoutes: Routes = [
   {
@@ -22,17 +23,17 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       {
-        enableTracing: true, // <-- debugging purposes only
+        enableTracing: false, // <-- debugging purposes only
       }
     ),
     CommonModule,
     BrowserModule,
     FormsModule
   ],
-  declarations: [PageNotFoundComponent, ComposeMessageComponent],
+  declarations: [],
   exports: [
     RouterModule
   ],
-  providers: []
+  providers: [CanDeactivateGuard]
 })
 export class AppRoutingModule { }
