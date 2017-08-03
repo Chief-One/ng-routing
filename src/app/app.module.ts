@@ -12,7 +12,6 @@ import { ComposeMessageComponent } from './compose-message.component';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
 import { PageNotFoundComponent } from './not-found.component';
-import { AdminModule } from "app/admin/admin.module";
 import { CrisisCenterModule } from "app/crisis-center/crisis-center.module";
 import { DialogService } from "app/dialog.service";
 
@@ -21,8 +20,6 @@ import { DialogService } from "app/dialog.service";
     BrowserModule,
     FormsModule,
     HeroesModule,
-    CrisisCenterModule,
-    AdminModule,
     LoginRoutingModule,
     AppRoutingModule
   ],
